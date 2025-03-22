@@ -6,7 +6,7 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: [true, 'Name is required'],
     },
-    name: {
+    email: {
       type: String,
       required: [true, 'Email is required'],
       unique: true,
@@ -22,7 +22,7 @@ const userSchema = new mongoose.Schema(
     },
     address: {
       type: String,
-      required: [true, 'Address is required'],
+      default: '',
     },
   },
   {
