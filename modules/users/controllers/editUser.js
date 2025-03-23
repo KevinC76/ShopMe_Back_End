@@ -4,15 +4,11 @@ const bcrypt = require('bcrypt');
 const edituser = async (req, res) => {
   const usersModel = mongoose.model('users');
 
-  const { userId } = req.params;
   const { name, address } = req.body;
-
-  console.log(req.body);
-  console.log(userId);
 
   // validate
   const findUser = usersModel.findOne({
-    _id: userId,
+    _id: req.user._id,
   });
 
   if (!findUser) throw 'User not found';
@@ -20,7 +16,7 @@ const edituser = async (req, res) => {
   // update
   await usersModel.updateOne(
     {
-      _id: userId,
+      _id: req.user._id,
     },
     {
       name,

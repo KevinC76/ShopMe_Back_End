@@ -3,10 +3,8 @@ const mongoose = require('mongoose');
 const getUserData = async (req, res) => {
   const usersModel = mongoose.model('users');
 
-  const { userId } = req.params;
-
   const userData = await usersModel.findOne({
-    _id: userId,
+    _id: req.user._id,
   });
 
   if (!userData) throw 'User not found';
