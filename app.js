@@ -4,6 +4,8 @@ const express = require('express');
 const errorHandler = require('./handlers/error');
 const mongoose = require('mongoose');
 const usersRoute = require('./modules/users/users.route');
+const productsRoute = require('./modules/products/products.route');
+
 require('dotenv').config();
 
 const app = express();
@@ -26,6 +28,7 @@ require('./models/products.model');
 
 // routes
 app.use('/api/users', usersRoute);
+app.use('/api/products', productsRoute);
 
 // 404 route
 app.all('*', (req, res, next) => {

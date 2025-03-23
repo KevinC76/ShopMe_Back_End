@@ -5,7 +5,7 @@ const edituser = async (req, res) => {
   const usersModel = mongoose.model('users');
 
   const { userId } = req.params;
-  const { name } = req.body;
+  const { name, address } = req.body;
 
   console.log(req.body);
   console.log(userId);
@@ -24,6 +24,7 @@ const edituser = async (req, res) => {
     },
     {
       name,
+      address,
     },
     {
       runValidators: true,
