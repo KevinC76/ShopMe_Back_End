@@ -25,6 +25,8 @@ mongoose
 // model initialization
 require('./models/users.model');
 require('./models/products.model');
+require('./models/cart.model');
+require('./models/cartItem.model');
 
 // routes
 app.use('/api/users', usersRoute);
