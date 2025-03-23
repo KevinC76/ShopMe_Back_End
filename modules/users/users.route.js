@@ -11,6 +11,7 @@ const usersRoute = express();
 usersRoute.post('/register', register);
 usersRoute.post('/login', login);
 
+// Protected routes
 usersRoute.use(auth);
 usersRoute.get('/user', getUserData);
 usersRoute.patch('/user', edituser);
