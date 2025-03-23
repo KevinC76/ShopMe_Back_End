@@ -15,6 +15,7 @@ const addProduct = async (req, res) => {
 
   // create new product
   await productsModel.create({
+    user_id: req.user._id,
     name,
     description,
     price,
