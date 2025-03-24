@@ -17,7 +17,7 @@ const cartItemSchema = new mongoose.Schema(
     },
     status_payment: {
       type: Boolean,
-      default: true,
+      default: false,
     },
   },
   {
