@@ -15,6 +15,7 @@ const deleteCartItem = async (req, res) => {
   const cartItemData = await cartItemModel.findOne({
     product_id: productID,
     cart_id: { $in: cartData.map((cart) => cart._id) },
+    status_payment: false,
   });
 
   if (!cartItemData) throw 'Item not found in cart';

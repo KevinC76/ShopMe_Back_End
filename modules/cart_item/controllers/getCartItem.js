@@ -11,6 +11,7 @@ const getCartItem = async (req, res) => {
 
   const cartItemData = await cartItemModel.find({
     cart_id: { $in: cartData.map((cart) => cart._id) },
+    status_payment: false,
   });
 
   res

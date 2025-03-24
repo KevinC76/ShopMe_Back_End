@@ -2,7 +2,7 @@ const express = require('express');
 const auth = require('../../middleware/auth');
 const addCartItem = require('./controllers/addCartItem');
 const deleteCartItem = require('./controllers/deleteCartItem');
-const editCartItem = require('./editCartItem');
+const editCartItem = require('./controllers/editCartItem');
 const getCartItem = require('./controllers/getCartItem');
 
 const cartItemRoute = express();
